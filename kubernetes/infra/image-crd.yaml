@@ -1,0 +1,40 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: pythonapp
+  namespace: flux
+spec:
+  image: aade/pythonapp
+  interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: pythonapp
+  namespace: flux
+spec:
+  imageRepositoryRef:
+    name: pythonapp
+  policy:
+    semver:
+      range: '>= 0.0.0'
+
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageUpdateAutomation
+metadata:
+  name: pythonapp
+  namespace: flux
+spec:
+  checkout:
+    branch: main
+    gitRepositoryRef:
+      name: flux
+  commit:
+    authorEmail: 49321398+adekoyadapo@users.noreply.github.com
+    authorName: fluxcdbot
+    messageTemplate: 'update image'
+  interval: 1m0s
+  update:
+    strategy: Setters
