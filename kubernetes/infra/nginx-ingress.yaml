@@ -33,7 +33,4 @@ spec:
       interval: 12h
   values:
     controller:
-      service:
-        type: "NodePort"
-    admissionWebhooks:
-      enabled: false
+      kind: DaemonSet
