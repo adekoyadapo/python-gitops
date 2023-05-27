@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,17 +16,16 @@ spec:
     spec:
       containers:
         - name: python
-          image: aade/pythonapp:0.0.0 # {"$imagepolicy": "flux:pythonapp"}
+          image: aade/pythonapp:0.0.1 # {"$imagepolicy": "flux:pythonapp"}
           ports:
             - containerPort: 80
-          resources: 
+          resources:
             limits:
               cpu: 100m
               memory: 100Mi
             requests:
               cpu: 50m
               memory: 50Mi
-
 ---
 apiVersion: v1
 kind: Service
