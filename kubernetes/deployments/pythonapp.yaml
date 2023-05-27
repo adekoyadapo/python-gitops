@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: python
-          image: aade/pythonapp:0.0.1
+          image: aade/pythonapp:0.0.0
           ports:
             - containerPort: 80
           resources: 
