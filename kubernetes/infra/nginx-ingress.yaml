@@ -37,3 +37,5 @@ spec:
         type: "NodePort"
     admissionWebhooks:
       enabled: true
+    rbac:
+      enabled: true
