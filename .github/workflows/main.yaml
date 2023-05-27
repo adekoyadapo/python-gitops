@@ -28,7 +28,6 @@ jobs:
             # generate Docker tags based on the following events/attributes
             tags: |
               type=semver,pattern={{version}}
-              type=semver,pattern={{major}}.{{minor}}
               type=raw,value={{sha}},enable=${{ github.ref_type != 'tag' }}
             labels: |
               maintainer=Ade
@@ -54,6 +53,6 @@ jobs:
             context: .
             file: Dockerfile
             platforms: linux/amd64,linux/arm64
-            push: ${{ github.event_name != 'pull_request' && github.event.base_ref =='refs/heads/master' && github.ref_type == 'tag' && !startsWith(github.ref, 'refs/tags/0.')}}
+            push: ${{ github.event_name != 'pull_request' && github.event.base_ref =='refs/heads/main' && github.ref_type == 'tag' && !startsWith(github.ref, 'refs/tags/0.')}}
             tags: ${{ steps.meta.outputs.tags }}
             labels: ${{ steps.meta.outputs.labels }}
