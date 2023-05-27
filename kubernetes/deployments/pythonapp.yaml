@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: python
-          image: aade/pythonapp:0.0.0 # {"$imagepolicy": "flux-system:pythonapp"}
+          image: aade/pythonapp:0.0.0 # {"$imagepolicy": "flux:pythonapp"}
           ports:
             - containerPort: 80
           resources: 
