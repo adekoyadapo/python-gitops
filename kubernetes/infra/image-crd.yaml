@@ -36,7 +36,7 @@ spec:
       author:
         email: 49321398+adekoyadapo@users.noreply.github.com
         name: fluxcdbot
-    messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+        messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
   interval: 1m0s
   update:
     path: ./kubernetes/deployments
