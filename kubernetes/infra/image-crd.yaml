@@ -28,14 +28,16 @@ metadata:
   name: pythonapp
   namespace: flux
 spec:
-  checkout:
-    branch: main
-    gitRepositoryRef:
-      name: flux
-  commit:
-    authorEmail: 49321398+adekoyadapo@users.noreply.github.com
-    authorName: fluxcdbot
-    messageTemplate: 'update image'
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: 49321398+adekoyadapo@users.noreply.github.com
+        name: fluxcdbot
+    messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
   interval: 1m0s
   update:
+    path: ./kubernetes/deployments
     strategy: Setters
