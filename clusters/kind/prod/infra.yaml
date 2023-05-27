@@ -10,7 +10,7 @@ spec:
   timeout: 5m
   sourceRef:
     kind: GitRepository
-    name: python-gitops
+    name: flux
   path: ./kubernetes/infra
   prune: true
   wait: true
