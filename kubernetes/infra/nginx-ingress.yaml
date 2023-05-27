@@ -2,21 +2,6 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ingress-nginx
-  labels:
-    toolkit.fluxcd.io/tenant: sre-team
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: ingress-nginx
-  namespace: ingress-nginx
-spec:
-  interval: 24h
-  url: https://kubernetes.github.io/ingress-nginx
-apiVersion: v1
-kind: Namespace
-metadata:
   labels:
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/name: ingress-nginx
@@ -674,6 +659,23 @@ webhooks:
     - ingresses
   sideEffects: None
 
+
+# ---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: ingress-nginx
+#   labels:
+#     toolkit.fluxcd.io/tenant: sre-team
+# ---
+# apiVersion: source.toolkit.fluxcd.io/v1beta2
+# kind: HelmRepository
+# metadata:
+#   name: ingress-nginx
+#   namespace: ingress-nginx
+# spec:
+#   interval: 24h
+#   url: https://kubernetes.github.io/ingress-nginx
 
 # ---
 # apiVersion: helm.toolkit.fluxcd.io/v2beta1
