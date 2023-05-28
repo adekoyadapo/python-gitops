@@ -17,3 +17,9 @@ flux bootstrap github \
   --personal \
   --components-extra=image-reflector-controller,image-automation-controller
 ```
+
+### Update key to write to repo to allow image update
+
+```bash
+kubectl -n flux get secret flux-system -o json | jq '.data."identity.pub"' -r | base64 -d
+```

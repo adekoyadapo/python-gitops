@@ -40,3 +40,4 @@ spec:
       protocol: TCP
   selector:
     app: python
+  type: LoadBalancer
