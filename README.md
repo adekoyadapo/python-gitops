@@ -11,9 +11,9 @@ export REPO=<current-repo>
 flux bootstrap github \
   --owner=$GITHUB_USER \
   --repository=$REPO \
-  --branch=main \
+  --branch=minikube \
   --namespace=flux \
-  --path=./clusters/kind \
+  --path=./clusters/minikube \
   --personal \
   --components-extra=image-reflector-controller,image-automation-controller
 ```

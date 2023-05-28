@@ -5,7 +5,7 @@ metadata:
   name: pythonapp
   namespace: flux
 spec:
-  image: aade/pythonapp
+  image: aade/pymin
   interval: 1m0s
 
 ---
