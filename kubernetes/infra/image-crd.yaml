@@ -19,7 +19,7 @@ spec:
     name: pythonapp
   policy:
     semver:
-      range: '>= 0.0.0'
+      range: '>= 0.1.0'
 
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
@@ -35,7 +35,7 @@ spec:
   git:
     checkout:
       ref:
-        branch: main
+        branch: minikube
     commit:
       author:
         email: 49321398+adekoyadapo@users.noreply.github.com
